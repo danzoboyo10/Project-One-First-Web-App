@@ -9,6 +9,34 @@ const settings = {
 	}
 };
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
+//Element References JQuery Variables
+const $bodyPart = $('#bodyPart')
+const $equipment = $('#equipment')
+const $gifUrl = $('#gifUrl')
+const $id = $('#exerciseId')
+const $exerName = $('#exerName')
+const muscleTarg = $('#muscleTarg')
+// bodyPart: "back"
+// equipment: "barbell"
+// gifUrl: "http://d205bpvrqc9yn1.cloudfront.net/0027.gif"
+// id: "0027"
+// name: "barbell bent over row"
+// target: "upper back"
+
+$.ajax(settings).done(function (data) {
+	console.log(data);
 });
+
+function displayExercises() {
+    // $title.text(data.Title)
+    // $year.text(data.Year)
+    // $rating.text(data.Rated)
+    // $actors.text(data.Actors)
+    // $('main').append(`<img src="${data.Poster}"/>`)
+    bodyPart: "back"
+    equipment: "barbell"
+    gifUrl: "http://d205bpvrqc9yn1.cloudfront.net/0027.gif"
+    id: "0027"
+    name: "barbell bent over row"
+    target: "upper back"
+}
