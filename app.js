@@ -1,3 +1,4 @@
+//Variables 
 const settings = {
 	"async": true,
 	"crossDomain": true,
@@ -10,33 +11,34 @@ const settings = {
 };
 
 //Element References JQuery Variables
-const $bodyPart = $('#bodyPart')
 const $equipment = $('#equipment')
-const $gifUrl = $('#gifUrl')
-const $id = $('#exerciseId')
+const $gifUrl = $('#exerGifUrl')
 const $exerName = $('#exerName')
-const muscleTarg = $('#muscleTarg')
-// bodyPart: "back"
-// equipment: "barbell"
-// gifUrl: "http://d205bpvrqc9yn1.cloudfront.net/0027.gif"
-// id: "0027"
-// name: "barbell bent over row"
-// target: "upper back"
+const $muscleTarg = $('#muscleTarg')
+const $daysOfWeek = $('.daysOfWeek')
 
-$.ajax(settings).done(function (data) {
-	console.log(data);
-});
+//EVENT LISTENERS
+$daysOfWeek.on("click", handleGetData)
 
-function displayExercises() {
-    // $title.text(data.Title)
-    // $year.text(data.Year)
-    // $rating.text(data.Rated)
-    // $actors.text(data.Actors)
-    // $('main').append(`<img src="${data.Poster}"/>`)
-    bodyPart: "back"
-    equipment: "barbell"
-    gifUrl: "http://d205bpvrqc9yn1.cloudfront.net/0027.gif"
-    id: "0027"
-    name: "barbell bent over row"
-    target: "upper back"
+
+//FUNCTIONS
+function handleGetData(event) {
+    event.preventDefault()
+
+
+$.ajax(settings).then(function (data) {
+    
+    console.log(data);
+    $equipment.text(data.equipment)
+    $gifUrl.text(data.gifUrl)
+    $exerName.text(data.exerName)
+    $muscleTarg.text(data.muscleTarg)
+}, 
+ function (error) {
+    console.log('something is wrong')
+    console.log(error)
+})
+
+
 }
+
