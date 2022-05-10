@@ -1,17 +1,13 @@
-h1{
+/* h1{
     text-align: center;
 }
 
 body {
     background-color: lightblue;
-
-
-    
-
 }
 .daysOfWeek {
     float: left;
-    width: 200px;
+    width: 225px;
     height: 40px;
     background-color: darkcyan;
     opacity: .9;
@@ -37,4 +33,83 @@ ul li ul li {
 }
 ul li:hover ul li{
     display: block;
+} */
+
+
+
+
+.container{
+    display: grid;
+    height:100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr 1.9fr 1.2fr 0.1fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content1 content2"
+    "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+}
+header{
+    /* background-color: lightblue; */
+   background-image: "url(https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)";
+    grid-area: nav;
+    text-align: center;
+    text-transform: uppercase;
+    font-family:'Dosis', sans-serif; 
+    font-size: 50px;
+    background-color: black;
+    color: white;
+        
+}
+
+
+main{ 
+    background-color: lightcoral;
+    grid-area: main;
+}
+#sidebar {
+    background-color: lightgray;
+    grid-area: sidebar;
+}
+#userQuote {
+    text-align: center;
+}
+/* #dream {
+    text-align: left; */
+    
+    
+
+
+#workoutPic{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    
+}
+    
+
+#content1{
+    background-color: lightgreen;
+    grid-area: content1;
+}
+#content2{
+    background-color: rgb(220, 144, 38);
+    grid-area: content2;
+}
+
+
+footer {
+    background-color:lightpink;
+    grid-area: footer;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+    position: relative;
+
+}
+#DannyInfo {
+   text-align: center;
+}
+#emailPhone {
+    text-align: center;
 }
