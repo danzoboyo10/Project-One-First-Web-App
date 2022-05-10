@@ -1,3 +1,4 @@
+
 //Variables 
 const settings = {
 	"async": true,
@@ -16,6 +17,8 @@ const $gifUrl = $('#exerGifUrl')
 const $exerName = $('#exerName')
 const $muscleTarg = $('#muscleTarg')
 const $daysOfWeek = $('.daysOfWeek')
+
+
 
 //EVENT LISTENERS
 $daysOfWeek.on("click", handleGetData)
