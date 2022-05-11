@@ -20,9 +20,10 @@ $.ajax(settings).done(function (response) {
 const $equipment = $('#equipment')
 const $exerName = $('#exerName')
 const $muscleTarg = $('#muscleTarg')
+const $exerCssImage = $('#exerCssImage')
 const $main = $('main')
 const $form = $('form')
-const $input = $('input[type="text"]')
+const $input = $(`input[type="text"]`)
 
 const $monday = $('#Mon')
 const $tuesday = $('#Tues')
@@ -56,18 +57,55 @@ function handleGetData(event) {
 $.ajax(settings).then(function (data) {
 
     //if(userInput === "chest"){
-        let workout = data.find(userInput)
-        $equipment.text(workout.equipment)
-        $exerName.text(workout.exerName)
-        $muscleTarg.text(workout.muscleTarg)
-        console.log($exerName)
-        $('content1').append(`<p> "${workout}"</p>`)
-        console.log(userInput)
+        let workout = data.find((data) => data.bodyPart === userInput)
+        console.log(workout)
+        $equipment.html(function(){
+            let equipmentName = workout.equipment
+            console.log(equipmentName);  
+        let equipmentEl = document.createElement("li")
+        equipmentEl.innerText = equipmentName;
+        $("#content1").append(equipmentEl)    
+            // text(workout.equipment)
+    })
 
+        // $exerName.text(workout.exerName)
+        $exerName.html(function(){
+        let exerNames = workout.name
+        console.log(exerNames);  
+        let exerEl = document.createElement("li")
+        exerEl.innerText = exerNames;
+        $("#content1").append(exerEl)    
+    })
+        $muscleTarg.html(function(){
+        let muscleTargs = workout.target
+        console.log(muscleTargs);  
+        let muscleTargEl = document.createElement("li")
+        muscleTargEl.innerText = muscleTargs;
+        $("#content1").append(muscleTargEl)    
+})
+
+        $exerCssImage.html(function(){
+        let exerCssDisplay = workout.gifUrl
+        console.log(exerCssDisplay);  
+        let exerCssEl = document.createElement("img")
+        img.src = src
+        exerCssEl.innerText = exerCssDisplay;
+        $("#content1").append(exerCssEl)    
+})
+
+
+
+
+        
+        // $muscleTarg.text(workout.muscleTarg)
+        // console.log($exerName)
+        // $('content1').append(`<p> "${workout}"</p>`)
+        // console.log(userInput)
+        
     
      console.log(data);
     
-    // $('content1').append(`<img src= "$(data.gifUrl"/>`)
+   
 
 }, 
  function (error) {
@@ -82,6 +120,8 @@ $.ajax(settings).then(function (data) {
 
 
 
+// $("#content1").append(`<img src= "$(data.gifUrl"/>`)
 
+// let workoutImg = workout.
 
 
