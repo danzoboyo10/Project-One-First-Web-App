@@ -11,11 +11,18 @@ const settings = {
 	}
 };
 
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+
 //Element References JQuery Variables
 const $equipment = $('#equipment')
-const $gifUrl = $('#exerGifUrl')
 const $exerName = $('#exerName')
 const $muscleTarg = $('#muscleTarg')
+const $main = $('main')
+const $form = $('form')
+const $input = $('input[type="text"]')
 
 const $monday = $('#Mon')
 const $tuesday = $('#Tues')
@@ -24,38 +31,44 @@ const $thursday = $('#Thurs')
 const $friday = $('#Frid')
 const $saturday = $('#Sat')
 const $sunday = $('#Sund')
-const $main = $('main')
+
+
 
 
 //EVENT LISTENERS
-$monday.on("click", handleGetData)
-$tuesday.on("click", handleGetData)
-$wednesday.on("click", handleGetData)
-$thursday.on("click", handleGetData)
-$friday.on("click", handleGetData)
-$saturday.on("click", handleGetData)
-$sunday.on("click", handleGetData)
+$form.on('submit', handleGetData)
+// $monday.on("click", handleGetData)
+// $tuesday.on("click", handleGetData)
+// $wednesday.on("click", handleGetData)
+// $thursday.on("click", handleGetData)
+// $friday.on("click", handleGetData)
+// $saturday.on("click", handleGetData)
+// $sunday.on("click", handleGetData)
+
 
 
 //FUNCTIONS
 function handleGetData(event) {
     event.preventDefault()
+    const userInput = $input.val();
 
 
 $.ajax(settings).then(function (data) {
-    if($monday.on){
-        let h2 = document.createElement("h2");
-        h2.innerText = 'Chest and Triceps'
-        h2.id = 'mondayWorkout'
-        $main.append(h2)
-        console.log(h2);
 
-    }
-    console.log(data);
-    $equipment.text(data.equipment)
-    $gifUrl.text(data.gifUrl)
-    $exerName.text(data.exerName)
-    $muscleTarg.text(data.muscleTarg)
+    //if(userInput === "chest"){
+        let workout = data.find(userInput)
+        $equipment.text(workout.equipment)
+        $exerName.text(workout.exerName)
+        $muscleTarg.text(workout.muscleTarg)
+        console.log($exerName)
+        $('content1').append(`<p> "${workout}"</p>`)
+        console.log(userInput)
+
+    
+     console.log(data);
+    
+    // $('content1').append(`<img src= "$(data.gifUrl"/>`)
+
 }, 
  function (error) {
     console.log('something is wrong')
@@ -63,25 +76,12 @@ $.ajax(settings).then(function (data) {
 })
 
 
+
 }
 
-// Top Menu Buttons:
-// var menu = [
-//     { text: "Home"},
-//     { text: "Random Drink"},
-//     { text: "Liquor Choice"},
-//     { text: "Search Drink"},
-//     { text: "All Drinks"},
-//   ];
-  
-//   const topMenuEl = document.getElementById("menu-bar");
-//   topMenuEl.style.height = "100%";
-//   topMenuEl.style.backgroundColor = "skyblue"
-//   topMenuEl.classList.add("flex-around");
-  
-//   for (let i of menu) {
-//     let bEl = document.createElement("button");
-//     bEl.setAttribute("submit", menu);
-//     bEl.textContent = i.text;
-//     topMenuEl.append(bEl);
-//   }
+
+
+
+
+
+
