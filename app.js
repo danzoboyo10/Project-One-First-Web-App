@@ -33,32 +33,62 @@ const $friday = $('#frid')
 const $saturday = $('#sat')
 const $sunday = $('#sund')
 
-$monday.on("click", function(){
+$monday.on("click", function(){    
 let workoutType = document.createElement("h2")
-
+workoutType.setAttribute("class", "workoutMuscles")
+workoutType.innerText = "Chest and Triceps"
+$(".dropdown").append(workoutType)
     
 })
+$tuesday.on("click", function(){    
+    let workoutType = document.createElement("h2")
+    workoutType.setAttribute("class", "workoutMuscles")
+    workoutType.innerText = "Legs"
+    $(".dropdown").append(workoutType)
+        
+    })
+$wednesday.on("click", function(){    
+    let workoutType = document.createElement("h2")
+    workoutType.setAttribute("class", "workoutMuscles")
+    workoutType.innerText = "Back and Biceps"
+    $(".dropdown").append(workoutType)
+        
+    })
+$thursday.on("click", function(){    
+    let workoutType = document.createElement("h2")
+    workoutType.setAttribute("class", "workoutMuscles")
+    workoutType.innerText = "Shoulders and Abs"
+    $(".dropdown").append(workoutType)  
+    })
 
+$friday.on("click", function(){    
+    let workoutType = document.createElement("h2")
+    workoutType.setAttribute("class", "workoutMuscles")
+    workoutType.innerText = "Chest and Triceps"
+    $(".dropdown").append(workoutType)  
+    })
 
+$saturday.on("click", function(){    
+    let workoutType = document.createElement("h2")
+    workoutType.setAttribute("class", "workoutMuscles")
+    workoutType.innerText = "Rest"
+    $(".dropdown").append(workoutType)  
+    })
+
+$sunday.on("click", function(){    
+    let workoutType = document.createElement("h2")
+    workoutType.setAttribute("class", "workoutMuscles")
+    workoutType.innerText = "Rest"
+    $(".dropdown").append(workoutType)  
+    })
+
+    
 
 
 //EVENT LISTENERS
 $form.on('submit', handleGetData)
-// $monday.on("click", displayWorkout)
-// $tuesday.on("click", displayWorkout)
-// $wednesday.on("click", displayWorkout)
-// $thursday.on("click", displayWorkout)
-// $friday.on("click", displayWorkout)
-// $saturday.on("click", displayWorkout)
-// $sunday.on("click", displayWorkout)
 
- const subMenuBtn = document.querySelector(".dropdown-days")   
- subMenuBtn.addEventListener("click", ()=>{
-     const workoutH2 = document.createElement("h2")
-     workoutH2.innerHTML = "Leg day"
 
- })
- 
 //FUNCTIONS
 function handleGetData(event) {
     event.preventDefault()
@@ -67,7 +97,6 @@ function handleGetData(event) {
 
 $.ajax(settings).then(function (data) {
 
-    //if(userInput === "chest"){
         let workout = data.find((data) => data.bodyPart === userInput)
         console.log(workout)
         $equipment.html(function(){
@@ -76,10 +105,8 @@ $.ajax(settings).then(function (data) {
         let equipmentEl = document.createElement("li")
         equipmentEl.innerText = equipmentName;
         $("#content1").append(equipmentEl)    
-            // text(workout.equipment)
     })
 
-        // $exerName.text(workout.exerName)
         $exerName.html(function(){
         let exerNames = workout.name
         console.log(exerNames);  
@@ -114,8 +141,5 @@ $.ajax(settings).then(function (data) {
 
 }
 
-// let muscleTargs = workout.target
-// console.log(muscleTargs);  
-// let muscleTargEl = document.createElement("li")
-// muscleTargEl.innerText = muscleTargs;
+
 

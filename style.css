@@ -2,7 +2,7 @@
     display: grid;
     height:100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: .5fr 1.9fr 1.2fr 0.1fr;
+    grid-template-rows: .1fr 1.9fr 1.2fr 0.1fr;
     grid-template-areas: 
     "nav nav nav nav"
     "sidebar main main main"
@@ -19,11 +19,34 @@ header{
     background-color: black;
     color: white;
     text-shadow: 5px 5px 5px RGB(195, 68, 122);
-    
-
-    ;
         
 }
+    #instaIcon {
+        max-width: 5%;
+        float: left;
+        width: 40%;
+        margin-right: auto;
+        padding-top: 5px;
+
+    }
+    #twitterIcon{
+        max-width: 5%;
+        float: left;        
+        width: 40%;
+        margin-right: auto;
+        padding-top: 5px;
+    
+    }
+    #facebookIcon {
+        max-width: 5%;
+        float: left;
+        width: 40%;
+        margin-right: auto;
+        padding-top: 5px; 
+    }
+   
+
+
 main{ 
     background-color: whitesmoke;
     grid-area: main;
@@ -48,11 +71,11 @@ main{
 }
     
 #content1{
-    background-color: black;
+    background-color: white;
     grid-area: content1;
 }
 #content2{
-    background-color: black;
+    background-color: white;
     grid-area: content2;
 }
 #trainerPic {
@@ -103,7 +126,7 @@ footer {
    border-bottom: 1px solid;
    border-top: 1px solid;
    border-width: 3px;
-   box-shadow: inset 0 12px 12px -12px RGB(195, 68, 122);
+   box-shadow: inset 0 11px 11px -11px RGB(195, 68, 122);
    color: RGB(195, 68, 122)
 
    
@@ -141,6 +164,7 @@ footer {
     color: white;
     padding: 18px;
     font-size: 18px;
+    font-weight: bold;
     border: none;
     border-radius: 20px;
     border: solid;
@@ -212,9 +236,22 @@ input[type = submit]:hover {
     text-align: left;
     font-size: 25px;
     font-weight: bold;
+    text-shadow: 1.25px 1.25px 1.25px RGB(195, 68, 122);
+    
 }
 
 #cssImg {
+    display: block;
     width: 40%;
-    max-height: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
+.dropdown {
+    display: inline;
+    font-size: 15px;
+}
+
+
+ 
+
