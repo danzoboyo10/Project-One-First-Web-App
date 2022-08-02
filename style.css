@@ -1,257 +1,206 @@
-.wrappingTheWebApp{
-    display: grid;
-    height:100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: .1fr 1.9fr 1.2fr 0.1fr;
-    grid-template-areas: 
+.wrappingTheWebApp {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.9fr 1.2fr 0.1fr;
+  grid-template-areas:
     "nav nav nav nav"
     "sidebar main main main"
     "sidebar content1 content1 content2"
     "sidebar footer footer footer";
-    grid-gap: 0.2rem;
+  grid-gap: 0.2rem;
 }
-header{
-    grid-area: nav;
-    text-align: center;
-    text-transform: uppercase;
-    font-family:'Dosis', sans-serif; 
-    font-size: 50px;
-    background-color: black;
-    color: white;
-    text-shadow: 5px 5px 5px RGB(195, 68, 122);
-        
+header {
+  grid-area: nav;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+  font-size: 50px;
+  background-color: black;
+  color: white;
+  text-shadow: 5px 5px 5px RGB(195, 68, 122);
 }
-    #instaIcon {
-        max-width: 5%;
-        float: left;
-        width: 40%;
-        margin-right: auto;
-        padding-top: 5px;
-
-    }
-    #twitterIcon{
-        max-width: 5%;
-        float: left;        
-        width: 40%;
-        margin-right: auto;
-        padding-top: 5px;
-    
-    }
-    #facebookIcon {
-        max-width: 5%;
-        float: left;
-        width: 40%;
-        margin-right: auto;
-        padding-top: 5px; 
-    }
-   
-
-
-main{ 
-    background-color: whitesmoke;
-    grid-area: main;
+main {
+  background-color: whitesmoke;
+  grid-area: main;
 }
 #sidebar {
-    background-color: black;
-    grid-area: sidebar;
+  background-color: black;
+  grid-area: sidebar;
 }
 #userQuote {
-    text-align: center;
-    font-weight:bold;
-    color: white;
+  text-align: center;
+  font-weight: bold;
+  color: white;
 }
 #dream {
-    color: white;
+  color: white;
 }
 
-#workoutPic{
-    max-width: 100%;
-    height: auto;
-    display: block;   
+#workoutPic {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
-    
-#content1{
-    background-color: white;
-    grid-area: content1;
+
+#content1 {
+  background-color: whitesmoke;
+  grid-area: content1;
 }
-#content2{
-    background-color: white;
-    grid-area: content2;
+#content2 {
+  background-color: black;
+  grid-area: content2;
 }
 #trainerPic {
-    width: 470px;
-    height: auto;
+  width: 470px;
+  height: auto;
 }
 
 footer {
-    background-color:whitesmoke;
-    grid-area: footer;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 20px;
-    position: relative;
+  background-color: whitesmoke;
+  grid-area: footer;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 20px;
+  position: relative;
 }
 #mon {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 #tues {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 #wednes {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 #thurs {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 #frid {
-    color: white;
+  color: white;
 }
 #sat {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 #sund {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
-
-
 
 #DannyInfo {
-   text-align: center;
-   font-weight: bold;
-   border-bottom: 1px solid;
-   border-top: 1px solid;
-   border-width: 3px;
-   box-shadow: inset 0 11px 11px -11px RGB(195, 68, 122);
-   color: RGB(195, 68, 122)
-
-   
-
-
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-width: 3px;
+  box-shadow: inset 0 12px 12px -12px RGB(195, 68, 122);
+  color: RGB(195, 68, 122);
 }
 #emailPhone {
-    text-align: center;
-    color:RGB(195, 68, 122)
-
-
-
+  text-align: center;
+  color: RGB(195, 68, 122);
 }
 .ulDayOfWeek {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.dayOfWeek  {
-    float: left;
-    width: 200px;
-    height: 40px;
-    opacity:1;
-    line-height: 45px;
-    text-align: center;
-    font-size: 30px;
-    
+.dayOfWeek {
+  float: left;
+  width: 200px;
+  height: 40px;
+  opacity: 1;
+  line-height: 45px;
+  text-align: center;
+  font-size: 30px;
 }
-
 
 .dropdownbtn {
-    background-color: black;
-    color: white;
-    padding: 18px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    border: solid;
-  }
-  
-  .dropdown-days {
-    display: none;
-    position: absolute;
-    color: white;
-    background-color: black;
-    text-align: center;
-    
-    min-width: 260px;
-    border-radius: 20px;
-    border: solid;
-  }
-  
-  .dropdown-days a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+}
 
-  }
-  .dropdown-days a:hover {
-      background-color: RGB(195, 68, 122)
+.dropdown-days {
+  display: none;
+  position: absolute;
+  color: white;
+  background-color: black;
+  text-align: center;
 
-      ;
-    }
-  
-  .dropdown:hover .dropdown-days {
-      display: block;
-    }
-  
-  .dropdownbtn:hover  {
-      background-color: RGB(195, 68, 122)
+  min-width: 260px;
+  border-radius: 20px;
+  border: solid;
+}
 
-      ;
-    }
+.dropdown-days a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+.dropdown-days a:hover {
+  background-color: RGB(195, 68, 122);
+}
+
+.dropdown:hover .dropdown-days {
+  display: block;
+}
+
+.dropdownbtn:hover {
+  background-color: RGB(195, 68, 122);
+}
 
 #mondayWorkout {
-    text-align: center;
+  text-align: center;
 }
-input[type = text] {
-    width: 175px;
-    text-align: center;
-    float: right;
-    margin-right: 25px;
-    border-color: RGB(195, 68, 122);
-    height: 20px;
-   
+input[type="text"] {
+  width: 175px;
+  text-align: center;
+  float: right;
+  margin-right: 25px;
+  border-color: RGB(195, 68, 122);
+  height: 20px;
 }
 
-input[type = submit] {
-    float: right;
-    margin-right: 25px;
-    height: 25px;
-    border-radius: 20px;
-    border: solid;
-    background-color: black;
-    color: white;
+input[type="submit"] {
+  float: right;
+  margin-right: 25px;
+  height: 25px;
+  border-radius: 20px;
+  border: solid;
+  background-color: black;
+  color: white;
 }
-input[type = submit]:hover {
-    background-color: RGB(195, 68, 122)
-
-    }
+input[type="submit"]:hover {
+  background-color: RGB(195, 68, 122);
+}
 .equipExerMuscle {
-    text-align: left;
-    font-size: 25px;
-    font-weight: bold;
-    text-shadow: 1.25px 1.25px 1.25px RGB(195, 68, 122);
-    
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 #cssImg {
-    display: block;
-    width: 40%;
-    height: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
-.dropdown {
-    display: inline;
-    font-size: 15px;
+  width: 40%;
+  max-height: 100%;
 }
 
-
- 
-
+.workoutMuscles {
+  text-shadow: 1px 1px 1px RGB(195, 68, 122);
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+}
+#validParts {
+    float: right;
+    padding-right: 80px;
+}
